@@ -1,0 +1,64 @@
+﻿<Window x:Class="ProyFinalHeladeriaWPF.Ventas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyFinalHeladeriaWPF"
+        mc:Ignorable="d"
+        Title="Ventas" Height="450" Width="800">
+    <Grid Background="SkyBlue">
+        <StackPanel Margin="30" Width="250px" HorizontalAlignment="Left">
+            <Label FontSize="25" HorizontalAlignment="Center">Datos del cliente</Label>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label FontSize="15" Margin="0,0,16.2,0">Carnet</Label>
+                <TextBox Name="boxCarnet" FontSize="15" Width="150"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label FontSize="15" Margin="0,0,5.3,0">Nombre</Label>
+                <TextBox Name="boxNombre" FontSize="15" Width="150"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label FontSize="15" Margin="0,0,5.8,0">Apellido</Label>
+                <TextBox Name="boxApellido" FontSize="15" Width="150"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label FontSize="15" Margin="0,0,4.5,0">Telefono</Label>
+                <TextBox Name="boxTelefono" FontSize="15" Width="150"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label FontSize="15" Margin="0,0,13.5,0">Codigo</Label>
+                <TextBox Name="boxCodigo" FontSize="15" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label FontSize="15">Direccion</Label>
+                <TextBox Name="boxDireccion" FontSize="15" Width="150"></TextBox>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid Width="500"
+                  Height="300"
+                  FontSize="20px"
+                  Margin="0,50,20,20"
+                  HorizontalAlignment="Right"
+                  Name="CompraHelados"
+                  AutoGenerateColumns="False"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Codigo" Binding="{Binding CodProducto}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding NombreProd}"/>
+                <DataGridTextColumn Header="Precio" Binding="{Binding Precio}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox Name="menuDesplegable" Width="120" VerticalAlignment="Top" HorizontalAlignment="Right" SelectionChanged="menuDesplegable_SelectionChanged" Margin="0,31,0,0">
+        </ComboBox>
+        <Button 
+            Name ="agregarCompra"
+            Width="150" 
+            Height="25"
+            FontSize="15"
+            Margin="0,0,25,20"
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Right" Click="agregarCompra_Click">
+            Agregar Compra
+        </Button>
+    </Grid>
+</Window>
